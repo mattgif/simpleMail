@@ -1,0 +1,36 @@
+{
+  "name": "simplemail",
+  "version": "1.0.0",
+  "description": "accepts mail from forms and sends to recipient (specified in .env)",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "mongo": "^0.1.0",
+    "nodemailer": "^4.6.4"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.1.1"
+  },
+  "scripts": {
+    "test": "mocha --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattgif/simpleMail.git"
+  },
+  "keywords": [
+    "mail",
+    "node"
+  ],
+  "author": "Matt Gifford",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattgif/simpleMail/issues"
+  },
+  "homepage": "https://github.com/mattgif/simpleMail#readme"
+}
