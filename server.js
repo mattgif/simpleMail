@@ -20,7 +20,6 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/api/sendmail', jsonParser, (req, res) => {
-    console.log(req.body);
     const formValid = validateMailForm(req.body);
     if (formValid !== 'ok') {
         return res.status(422).json(formValid);
@@ -51,7 +50,7 @@ app.post('/api/sendmail', jsonParser, (req, res) => {
             return res.status(500).json('We encountered an unexpected error sending your email')
         }
 
-        return res.status(201)
+        return res.sendStatus(204)
     })
 
 });
