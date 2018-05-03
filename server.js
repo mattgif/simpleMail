@@ -10,14 +10,17 @@ const { MAILTO, MAILFROM, USER, PASSWORD, SITENAME } = require('./config');
 const PORT = process.env.PORT || 3000;
 const jsonParser = bodyParser.json();
 const { validateMailForm } = require('./validators');
+const morgan = require('morgan');
 
 app.use(cors());
+app.use(morgan('combined'));
 
 app.get('/api', (req, res) => {
     res.json({ok: true});
 });
 
 app.post('/api/sendmail', jsonParser, (req, res) => {
+    console.log(req.body);
     const formValid = validateMailForm(req.body);
     if (formValid !== 'ok') {
         return res.status(422).json(formValid);
